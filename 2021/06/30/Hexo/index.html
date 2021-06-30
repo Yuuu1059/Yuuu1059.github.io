@@ -233,7 +233,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      254 字
+      310 字
     </span>
   
 
@@ -243,7 +243,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -280,13 +280,16 @@
 <p>首先，安装 Node.JS，因为 Hexo 是基于 Node.js 驱动的一款静态博客框架。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">version</span><br><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span><br>npm -v<br></code></pre></td></tr></table></figure>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>如果上面的环境都装好就可以用 npm 开始安装 Hexo，在命令行输入执行以下命令：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span><br><br>hexo -v <span class="hljs-meta">#验证是否安装成功</span><br></code></pre></td></tr></table></figure>
 <p>安装完Hexo之后，然后到需要放项目文件的目录，右键Git-bash运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init Yuuu1059  <span class="hljs-comment">#Yuuu1059是放Hexo的名字，可以自定义</span><br><span class="hljs-built_in">cd</span> Yuuu1059 <span class="hljs-comment">#进入Yuuu1059文件夹</span><br>npm install<br></code></pre></td></tr></table></figure>
 <p>如果上面的命令都没有报错的话</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g  <span class="hljs-comment">#生成静态网页</span><br>hexo s  <span class="hljs-comment">#运行服务器</span><br>hexo d  <span class="hljs-comment">#部署到GitHub上，暂时先不用运行</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g  <span class="hljs-comment">#生成静态网页</span><br>hexo s  <span class="hljs-comment">#启动本地服务</span><br>hexo d  <span class="hljs-comment">#部署到GitHub上，暂时先不用运行</span><br></code></pre></td></tr></table></figure>
 <p>然后就可以访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
-<h3 id="连接GitHub-ssh"><a href="#连接GitHub-ssh" class="headerlink" title="连接GitHub ssh"></a>连接GitHub ssh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.email <span class="hljs-string">&quot;920149960@qq.com&quot;</span>   <span class="hljs-comment">#设置邮箱地址</span><br>git config --global user.name <span class="hljs-string">&quot;Yuuu1059&quot;</span>            <span class="hljs-comment">#设置用户名</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;920149960@qq.com&quot;</span>             <span class="hljs-comment">#生成RSA,连续回车3次</span><br></code></pre></td></tr></table></figure>
+<h2 id="连接GitHub-ssh"><a href="#连接GitHub-ssh" class="headerlink" title="连接GitHub ssh"></a>连接GitHub ssh</h2><h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.email <span class="hljs-string">&quot;920149960@qq.com&quot;</span>   <span class="hljs-comment">#设置邮箱地址</span><br>git config --global user.name <span class="hljs-string">&quot;Yuuu1059&quot;</span>            <span class="hljs-comment">#设置用户名</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;920149960@qq.com&quot;</span>             <span class="hljs-comment">#生成RSA,连续回车3次</span><br></code></pre></td></tr></table></figure>
+
+<p>如果生成成功之后，在 C:\Users\Administrator.ssh（Administrator为电脑的用户名）ip_rsa.pub 里的一串密钥</p>
+<p>打开GitHub_Settings_keys 页面，新建 new SSH Key ，把RSA填进去 </p>
 <p>测试语句，有Successfully即为成功。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
 <h4 id=""><a href="#" class="headerlink" title=""></a></h4>
